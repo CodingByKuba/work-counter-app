@@ -27,7 +27,7 @@ const MainWindow = styled.div`
 `;
 
 const App = () => {
-  const [loginToken, setLoginToken] = useState("");
+  const [loginToken, setLoginToken] = useState(null);
   const [memoryPassword, setMemoryPassword] = useLocalStorage(
     "password-memory",
     null
