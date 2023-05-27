@@ -437,4 +437,4 @@ Error generating stack: `+i.message+`
     width: 1200px;
     margin: auto;
   }
-`,GT=()=>{const[e,t]=w.useState(""),[n,r]=Lc("password-memory",null);return x.jsxs(x.Fragment,{children:[x.jsx(bw,{}),x.jsx(Ew,{}),x.jsx(jb,{theme:VT,children:x.jsx(KT,{children:e===null?x.jsx(Y5,{setLoginToken:t,memoryPassword:n,setMemoryPassword:r}):x.jsx(HT,{setLoginToken:t,loginToken:e,memoryPassword:n,setMemoryPassword:r})})})]})},XT=Cu.createRoot(document.getElementById("root"));XT.render(x.jsx(GT,{}));
+`,GT=()=>{const[e,t]=w.useState(null),[n,r]=Lc("password-memory",null);return x.jsxs(x.Fragment,{children:[x.jsx(bw,{}),x.jsx(Ew,{}),x.jsx(jb,{theme:VT,children:x.jsx(KT,{children:e===null?x.jsx(Y5,{setLoginToken:t,memoryPassword:n,setMemoryPassword:r}):x.jsx(HT,{setLoginToken:t,loginToken:e,memoryPassword:n,setMemoryPassword:r})})})]})},XT=Cu.createRoot(document.getElementById("root"));XT.render(x.jsx(GT,{}));
