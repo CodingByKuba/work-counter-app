@@ -71,6 +71,13 @@ const TopBackground = styled.div`
   }
 `;
 
+const CenterWrapper = styled.div`
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 const initialState = {
   day: null,
   month: null,
@@ -84,6 +91,7 @@ const Main = ({
   memoryPassword,
   setMemoryPassword,
 }) => {
+  let refreshInterval;
   const [addBoxOpen, setAddBoxOpen] = useState(false);
   const [settingsBoxOpen, setSettingsBoxOpen] = useState(false);
   const [date, setDate] = useReducer(dateReducer, initialState);
@@ -100,6 +108,13 @@ const Main = ({
 
   useEffect(() => {
     handleGetRecords();
+    refreshInterval = setInterval(() => {
+      axios.get(config.BASE_URL, {
+        timeout: 5000,
+      });
+    }, 10000);
+
+    return () => clearInterval(refreshInterval);
   }, []);
 
   const handleGetRecords = () => {
@@ -184,7 +199,11 @@ const Main = ({
         />
       )}
 
-      {pending.loading === true && <CircularProgress />}
+      {pending.loading === true && (
+        <CenterWrapper>
+          <CircularProgress />
+        </CenterWrapper>
+      )}
       {pending.error !== null && (
         <Alert severity="error" onClick={() => handleGetRecords()}>
           {pending.error}
